@@ -15,6 +15,9 @@ group :development do
   gem 'better_errors', '~> 2.0.0'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
 
 gem 'haml-rails', '~> 0.5.3'
 gem 'bootstrap-sass', '~> 3.2.0'
