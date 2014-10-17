@@ -7,9 +7,9 @@ Summary: I will be creating a financial dashboard for my gSchool project.
 Features:
 
 <ol>
-<li> Example 1 </li>
-<li> Example 2 </li>
-<li> Example 3 </li>
+  <li> Example 1 </li>
+  <li> Example 2 </li>
+  <li> Example 3 </li>
 </ol>
 
 Heroku: http://financial-dashboard.herokuapp.com/
