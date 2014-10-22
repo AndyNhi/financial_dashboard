@@ -9,16 +9,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
-group :development do
-  gem 'spring'
-  gem 'better_errors', '~> 2.0.0'
-end
+gem 'haml-rails', '~> 0.5.3'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 group :production do
   gem 'rails_12factor'
 end
 
-gem 'haml-rails', '~> 0.5.3'
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
+group :development do
+  gem 'spring'
+  gem 'better_errors', '~> 2.0.0'
+end
