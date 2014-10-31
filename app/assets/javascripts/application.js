@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$.ajax({
+    url: 'grabtweets.rb',
+    type: 'GET',
+    dataType: 'json',
+    data: request
+});

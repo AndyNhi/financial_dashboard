@@ -16,3 +16,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+body {
+  background-image: url('stitch.png');
+  background-repeat: repeat;
+}
+
+.jumbotron {
+  border-radius: 5px;
+  background: rgba(100, 54, 54, 0.5);
+  color: white;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding-left: 0px;
+}
