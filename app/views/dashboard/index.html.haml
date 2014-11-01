@@ -1,4 +1,6 @@
-
+.font_header_color
+  = @client.home_timeline.first.text
+  = @client.user_timeline("nhic0tine").first.text
 
 .col-md-3
   %h1.font_header_color twitter feed
