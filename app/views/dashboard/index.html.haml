@@ -1,102 +1,21 @@
-.font_header_color
-  = @client.home_timeline.first.text
-  = @client.user_timeline("nhic0tine").first.text
-
 .col-md-3
   %h1.font_header_color twitter feed
   .jumbotron.tw_feed_height
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
+    .font_header_color
+    
+
+
+
 
 .col-md-3
   %h1.font_header_color twitter portfolio
   .jumbotron
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
-    %h6 twitter feed
+    %table.table
+      - CLIENT.search("$BABA OR $MU OR $CSX OR $FNMA", :result_type => "recent").take(40).each do |tweet|
+        %tr
+          %td= tweet.text
+
+
 .col-md-6
   .pull-right
     = link_to('Log In | Sign Up', new_user_path, class: 'btn btn-xs')
