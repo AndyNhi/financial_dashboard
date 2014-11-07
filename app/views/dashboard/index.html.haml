@@ -1,21 +1,21 @@
-.col-md-3
-  %h1.font_header_color twitter feed
-  .jumbotron.tw_feed_height
-    .font_header_color tweets
+.font_header_color
+  .col-md-3
+    %h1 twitter feed
+    .jumbotron.tw_feed_height
+      empty
 
-.col-md-3
-  %h1.font_header_color twitter portfolio
-  .jumbotron
-    %table.table
-      - CLIENT.search("$BABA OR $MU OR $CSX OR $FNMA", :result_type => "recent").take(40).each do |tweet|
-        %tr
-          %td= tweet.text
+  .col-md-3
+    %h1 twitter portfolio
+    .jumbotron
+      %table.table
+        - CLIENT.search("$BABA OR $MU OR $CSX OR $FNMA", :result_type => "recent").take(40).each do |tweet|
+          %tr
+            %td= tweet.text
 
-
-.col-md-6
-  %h1.font_header_color market gain/loss
-  .jumbotron
-    market loss gain
-  %h1.font_header_color stock performance
-  .jumbotron
-    portfolio
+  .col-md-6
+    %h1 market gain/loss
+    .jumbotron
+      empty
+    %h1 stock performance
+    .jumbotron
+      empty

@@ -18,19 +18,13 @@ class UsersController < ApplicationController
     redirect_to user_account_path
   end
 
-  def user_account
-    @user = User.find(params[:id])
-    @tick = Twticker.new
-  end
-
   def sign_in_sign_up
     @user = User.new
   end
 
-  # def add_twitter
-  #   @user = User.new(params.require(:user).permit(:tw_ticker))
-  #   @user.save
-  #   redirect_to user_account_path(params[:id])
-  # end
+  def user_account
+    @user = User.find(params[:id])
+  end
+
 
 end

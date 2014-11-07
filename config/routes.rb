@@ -9,6 +9,6 @@ Rails.application.routes.draw do
  post '/signin', to: 'authentication#create', as: :signin
   get '/signout', to: 'authentication#destroy', as: :signout
 
-  get 'users/account/:id', to: 'users#user_account', as: :user_account
+  get 'users/account/:id', to: 'users#user_account', as: :userprofile
 
 end
