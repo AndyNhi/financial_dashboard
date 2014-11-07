@@ -5,6 +5,7 @@ class AuthenticationController < ApplicationController
   end
 
   def create
+    @user = User.new(@user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation)))
     @user = User.find(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
