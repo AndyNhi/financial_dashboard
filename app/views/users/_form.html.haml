@@ -4,7 +4,7 @@
     %ol.breadcrumb
       %li= link_to('Dashboard', root_path)
       %li.active= "Edit"
-  = form_for(@user) do |f|
+  = form_for(@user, url: users_path) do |f|
     .form-group
       = f.label :email
       = f.text_field :email, class: 'form-control'

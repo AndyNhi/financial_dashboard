@@ -5,13 +5,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %nav.navbar.navbar-default.navbar-inverse
+  %nav.navbar-fixed-top
     = link_to('Home', root_path)
     .pull-right
-      = link_to('Sign Up', new_user_path, class: 'btn btn-xs')
-      = link_to('Sign In', signin_path, class: 'btn btn-xs')
       - if current_user
-        = link_to('Sign Out', signout_path)
+        = link_to('Sign Out', signout_path, class: 'btn btn-xs')
+      - else
+        -# = link_to('Sign Up', new_user_path, class: 'btn btn-xs')
+        -# = link_to('Sign In', signin_path, class: 'btn btn-xs')
+        = link_to('Sign In | Sign Up', sign_in_sign_up_path, class: 'btn btn-xs')
+
   %body
   = yield
   %footer

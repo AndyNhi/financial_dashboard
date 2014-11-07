@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
-  end
-
   def create
     @user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation))
     @user.save
@@ -25,6 +21,10 @@ class UsersController < ApplicationController
   def user_account
     @user = User.find(params[:id])
     @tick = Twticker.new
+  end
+
+  def sign_in_sign_up
+    @user = User.new
   end
 
   # def add_twitter

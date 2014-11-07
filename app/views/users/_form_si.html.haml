@@ -1,0 +1,13 @@
+.text_color
+  .jumbotron
+    = form_for(@user, url: signin_path) do |f|
+      - if @sign_in_error
+        .alert.alert-danger= @sign_in_error
+      .form-group
+        = f.label :email
+        = f.email_field :email, class: 'form-control'
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control', placeholder: 'password'
+      .form-group
+        = f.submit 'Submit', class: 'btn btn-default'

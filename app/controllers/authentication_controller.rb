@@ -1,18 +1,13 @@
 class AuthenticationController < ApplicationController
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(@user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation)))
-    @user = User.find(params[:email])
-    if @user && @user.authenticate(params[:password])
+  def create  
+    @user = User.find_by(email: params[:user][:email])
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to root_path
     else
       @sign_in_error = "Username / password combination is invalid"
-      render :new
+      render "users/sign_in_sign_up"
     end
   end
 

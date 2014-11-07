@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   resources :users
   resources :twtickers
 
+  get '/sign-in-sign-up', to: 'users#sign_in_sign_up'
+ post '/signin', to: 'authentication#create', as: :signin
+  get '/signout', to: 'authentication#destroy', as: :signout
+
   get 'users/account/:id', to: 'users#user_account', as: :user_account
-
-  get '/sign-in', to: 'authentication#new', as: :signin
- post '/sign-in', to: 'authentication#create'
-
-  get '/sign-out', to: 'authentication#destroy', as: :signout
 
 end
