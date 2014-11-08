@@ -10,7 +10,7 @@
     .pull-right
       - if current_user
         = link_to('Sign Out', signout_path, class: 'btn btn-xs')
-        -# = link_to('Profile', userprofile_path, class: 'btn btn-xs')
+        = link_to('Profile', user_path(current_user), class: 'btn btn-xs')
       - else
         = link_to('Sign In | Sign Up', sign_in_sign_up_path, class: 'btn btn-xs')
 

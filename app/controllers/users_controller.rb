@@ -22,9 +22,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def user_account
-    @user = User.find(params[:id])
+  def show
+    @user = User.find(current_user[:id])
   end
+
 
 
 end
