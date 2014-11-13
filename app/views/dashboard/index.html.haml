@@ -10,7 +10,11 @@
       %table.table
         - CLIENT.search("$BABA OR $MU OR $CSX OR $FNMA", :result_type => "recent").take(40).each do |tweet|
           %tr
-            %td= tweet.text
+            %td= image_tag(tweet.user.profile_image_url, class: 'img-rounded')
+            %td
+              = tweet.user.screen_name
+              %h5= tweet.text
+
 
   .col-md-6
     %h1 market gain/loss
