@@ -1,10 +1,17 @@
 .text_color
   .col-md-3
     %h1 twitter tickers
-    = render 'twtickers/form'
-
-
+    .jumbotron
+      = render 'twtickers/form'
+      %table.table
+        %thead
+          %th
+        %tbody
+        - @twtickers.each do |t|
+          %tr
+            %td= t.tick_name
 
   .col-md-4
     %h1 profile
-    = render 'form_signup'
+    .jumbotron
+      = render 'form_profile'

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107003036) do
+ActiveRecord::Schema.define(version: 20141119225010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "twtickers", force: true do |t|
-    t.string "tick_name"
+    t.string  "tick_name"
+    t.integer "user_id"
   end
 
   create_table "users", force: true do |t|

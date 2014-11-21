@@ -1,21 +1,17 @@
 class TwtickersController < ApplicationController
 
-  def index
-    @users_twtickers = Twticker.all(current_user[:id])
+  before_action do
+    @user = User.find(params[:user_id])
   end
 
-  def new
-    @user_twticker = Twticker.new
+  def index
+    @twticker = @user.twtickers.all(current_user[:id])
   end
 
   def create
-    @user_twticker = Twticker.new(params.require(:twticker).permite(:tick_name))
-    @user_twticker.save
+    @twticker = @user.twtickers.new(params.require(:ticker_add).permit(:user_id, :tick_name))
+    @twticker.save
     redirect_to user_path(current_user)
   end
-
-  def destroy
-  end
-
 
 end

@@ -6,13 +6,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %nav.navbar-fixed-top
-    = link_to('Home', root_path)
-    .pull-right
+    .navbar-header
+    .navbar-form.navbar-right
       - if current_user
-        = link_to('Sign Out', signout_path, class: 'btn btn-xs')
-        = link_to('Profile', user_path(current_user), class: 'btn btn-xs')
+        = link_to('Sign Out', signout_path, class: 'btn')
+        = link_to('Profile', user_path(current_user), class: 'btn')
       - else
-        = link_to('Sign In | Sign Up', sign_in_sign_up_path, class: 'btn btn-xs')
+        = render 'users/form_signin'
+  .navbar_padding
 
   %body
   = yield

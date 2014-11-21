@@ -1,8 +1,6 @@
-.text_color
-  .jumbotron
-    = form_for(:ticker_add, url: user_path(current_user)) do |f|
-      .form-group
-        = f.label :tick_name
-        = f.text_field :tick_name, class: 'form-control'
-      .form-group
-        = f.submit 'Add Ticker', class: 'btn btn-default'
+= form_for(:ticker_add, url: user_twtickers_path(current_user)) do |f|
+  .form-group
+    = f.label :tick_name
+    = f.text_field :tick_name, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-default'

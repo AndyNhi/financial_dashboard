@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user[:id])
+    @twtickers = current_user.twtickers.all
   end
 
 
