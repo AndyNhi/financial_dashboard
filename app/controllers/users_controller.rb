@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation))
     @user.save
@@ -24,9 +28,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user[:id])
-    @twtickers = current_user.twtickers.all
+    @quote = @user.quotes.new
+    @quotes = current_user.quotes.all
   end
-
-
 
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   resources :users do
-    resources :twtickers
+    resources :quotes, only: [:create, :destroy]
   end
 
   get '/signout', to: 'authentication#destroy', as: :signout

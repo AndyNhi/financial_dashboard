@@ -1,15 +1,15 @@
 .text_color
   .col-md-3
-    %h1 twitter tickers
+    %h1 portfolio quotes
     .jumbotron
-      = render 'twtickers/form'
-      %table.table
+      = render 'quotes/form'
+      %table
         %thead
           %th
         %tbody
-        - @twtickers.each do |t|
+        - @quotes.each do |q|
           %tr
-            %td= t.tick_name
+            %td= q.ticker
 
   .col-md-4
     %h1 profile
