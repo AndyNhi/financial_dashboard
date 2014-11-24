@@ -16,10 +16,13 @@ gem 'autoprefixer-rails'
 gem 'twitter'
 gem 'bcrypt', '~> 3.1.7'
 
-
-
 group :production do
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'faker', '~> 1.4.3'
 end
 
 group :development do
@@ -28,7 +31,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
+  gem 'faker', '~> 1.4.3'
 end

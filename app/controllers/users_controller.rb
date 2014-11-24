@@ -22,10 +22,6 @@ class UsersController < ApplicationController
     redirect_to user_account_path
   end
 
-  def sign_in_sign_up
-    @user = User.new
-  end
-
   def show
     @user = User.find(current_user[:id])
     @quote = @user.quotes.new
