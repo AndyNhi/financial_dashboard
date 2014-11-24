@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '4.1.6'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -20,9 +19,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :test do
-  gem 'rspec-rails', '~> 3.1.0'
+group :development, :test do
   gem 'faker', '~> 1.4.3'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -31,6 +30,11 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'capybara'
-  gem 'faker', '~> 1.4.3'
+  gem 'xray-rails', '~> 0.1.14'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'factory_girl', '~> 4.5.0'
+  gem 'capybara', '~> 2.4.4'
 end
