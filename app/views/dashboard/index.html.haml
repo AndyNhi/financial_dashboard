@@ -8,12 +8,13 @@
     %h1 twitter portfolio
     .jumbotron
       %table.table
-        - CLIENT.search(@portfolio_tweet_string, :result_type => "recent").take(40).each do |tweet|
-          %tr
-            %td= image_tag(tweet.user.profile_image_url, class: 'img-rounded')
-            %td
-              = tweet.user.screen_name
-              %h5= tweet.text
+        - if current_user.present?
+          - CLIENT.search(@portfolio_tweet_string, :result_type => "recent").take(40).each do |tweet|
+            %tr
+              %td= image_tag(tweet.user.profile_image_url, class: 'img-rounded')
+              %td
+                = tweet.user.screen_name
+                %h5= tweet.text
 
   .col-md-6
     %h1 market gain/loss

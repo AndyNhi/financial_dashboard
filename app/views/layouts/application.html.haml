@@ -13,8 +13,7 @@
         = link_to('Profile', user_path(current_user), class: 'btn')
         = link_to('Sign Out', signout_path, class: 'btn')
       - else
-        li= link_to('Dashboard', root_path)
-        li= render 'users/form_signin'
+        = render 'users/form_signin'
   .navbar_padding
 
   %body
