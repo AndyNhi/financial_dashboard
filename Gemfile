@@ -14,6 +14,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'twitter'
 gem 'bcrypt', '~> 3.1.7'
+gem 'yahoo-finance', '~> 0.2.0'
+gem 'twitter-text', '~> 1.10.0'
 
 group :production do
   gem 'rails_12factor'

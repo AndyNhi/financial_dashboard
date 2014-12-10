@@ -1,9 +1,17 @@
+
 class DashboardController < ApplicationController
 
+include YahooHelper
+
   def index
+
     if current_user.present?
       @portfolio_tweet_string = hash_string
+      @portfolio_status = portfolio_tracking
     end
+
+
+
   end
 
 private
