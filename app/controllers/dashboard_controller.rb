@@ -1,22 +1,19 @@
 
 class DashboardController < ApplicationController
 
-include YahooHelper
-
   def index
-
-    if current_user.present?
-      @portfolio_tweet_string = hash_string
-      @portfolio_status = portfolio_tracking
-    end
-
-
-
+    @portfolio_quotes = YahooApi.new.portfolio(user_quotes) if current_user.present?
+    @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present?
+    @daily_tweets = StockTwitApi.new.trending_tickers if current_user.present?
   end
 
 private
 
-  def hash_string
+  def user_quotes
+    Quote.where(user_id: current_user.id).pluck(:ticker)
+  end
+
+  def user_symbols
     hash_tickers = ""
     current_user.quotes.each { |hash| hash_tickers += " OR $#{hash.ticker}" }
     hash_tickers

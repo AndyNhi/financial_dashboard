@@ -1,38 +1,51 @@
 .font_header_color
   .col-md-3
     %h1 twitter feed
-    .jumbotron.tw_feed_height
-      empty
+    .jumbotron.tw_feed_height.color_black
+      %table.table
+        = debug @daily_tweets
 
   .col-md-3
     %h1 twitter portfolio
-    .jumbotron
+    .jumbotron.color_mellow
       %table.table
-        - if current_user.present?
-          - CLIENT.search(@portfolio_tweet_string, :result_type => "recent").take(40).each do |tweet|
+        -if current_user.present?
+          - @portfolio_tweets.each do |tweet|
             %tr
               %td= image_tag(tweet.user.profile_image_url, class: 'img-rounded')
               %td
-                = tweet.user.screen_name
-                %h5= auto_link_urls(tweet.text)
+                %h6= tweet.user.screen_name
+                %h6= auto_link_urls(tweet.text).html_safe
+
 
   .col-md-6
     %h1 market gain/loss
-    .jumbotron
+    .jumbotron.color_yellow
       empty
     %h1 stock performance
-    .jumbotron
+    .jumbotron.color_redish
       %table.table
         %thead
           %th Company
           %th Symbol
           %th Last Trade
           %th Change $ | %
+          %th EPS CY
+          %th EPS NQ
+          %th EPS NY
         %tbody
           - if current_user.present?
-            - @portfolio_status.each do |t|
+            - @portfolio_quotes.each do |t|
               %tr
                 %td= t.name
                 %td= t.symbol
-                %td= t.last_trade_realtime_withtime
+                %td= t.last_trade_realtime_withtime.html_safe
                 %td= t.change_and_percent_change
+                %td= t.eps_estimate_current_year
+                %td= t.eps_estimate_next_quarter
+                %td= t.eps_estimate_next_year
+
+  .col-md-6
+    %h1 quick info
+    .jumbotron.color_black
+      empty
