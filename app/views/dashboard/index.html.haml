@@ -3,8 +3,12 @@
     %h1 twitter feed
     .jumbotron.tw_feed_height.color_black
       %table.table
-        = debug @daily_tweets
-
+        - @daily_tweets[:messages].each do |msg|
+          %tr
+            %td= image_tag(msg[:user][:avatar_url], class: 'img-rounded')
+            %td
+              %h6= msg[:user][:name]
+              %h6= msg[:body]
   .col-md-3
     %h1 twitter portfolio
     .jumbotron.color_mellow
