@@ -1,7 +1,7 @@
 .font_header_color
   .col-md-3
     %h1 twitter feed
-    .jumbotron.tw_feed_height.color_black
+    .jumbotron.color_black
       %table.table
         - @daily_tweets[:messages].each do |msg|
           %tr
@@ -23,9 +23,6 @@
 
 
   .col-md-6
-    %h1 market gain/loss
-    .jumbotron.color_yellow
-      empty
     %h1 stock performance
     .jumbotron.color_redish
       %table.table

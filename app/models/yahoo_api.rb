@@ -16,6 +16,4 @@ class YahooApi
   end
 
 
-
-
 end
