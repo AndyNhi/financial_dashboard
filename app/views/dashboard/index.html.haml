@@ -2,7 +2,7 @@
   .font_header_color
     .col-md-3
       %h1 twitter feed
-      .jumbotron.color_black
+      .jumbotron.trending_tweet_color
         %table.table
           - if current_user.present?
             - @daily_tweets[:messages].each do |msg|
@@ -50,5 +50,5 @@
                     %td= t.eps_estimate_next_year
 
         %h1 quick info
-        .jumbotron.color_black
+        .jumbotron.quick_info_color
           = render 'quick_info'

@@ -25,6 +25,7 @@ body {
 
 }
 
+
 .jumbotron {
   border-radius: 5px;
   color: white;
@@ -48,6 +49,8 @@ body {
   position: fixed;
 }
 .stock_performance_color {
+  height: 350px;
+  overflow: auto;
   background: rgba(100, 54, 54, 0.5);
 }
 
@@ -55,7 +58,13 @@ body {
 background: rgba(100, 90, 15, 0.5);
 }
 
-.color_black {
+.trending_tweet_color {
+  background: rgba(30, 30, 15, 0.5);
+}
+
+
+.quick_info_color {
+  height: 350px;
   background: rgba(30, 30, 15, 0.5);
 }
 

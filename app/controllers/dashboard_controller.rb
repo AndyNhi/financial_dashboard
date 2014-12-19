@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
   end
 
   def quick_info
-   @symbol = params[:symbol]
+    @symbol = params[:symbol]
   end
 
 private
