@@ -8,13 +8,15 @@
   %nav.navbar-fixed-top.navbar-inverse
     .navbar-header
       #indices
-    .navbar-form.navbar-right
-      - if current_user
-        = link_to('Dashboard', root_path, class: 'btn')
-        = link_to('Profile', user_path(current_user), class: 'btn')
-        = link_to('Sign Out', signout_path, class: 'btn')
-      - else
-        = render 'users/form_signin'
+    .navbar-collapse.collapse
+      .navbar-right
+        .navbar-form
+          - if current_user
+            = link_to('Dashboard', root_path, class: 'btn')
+            = link_to('Profile', user_path(current_user), class: 'btn')
+            = link_to('Sign Out', signout_path, class: 'btn')
+          - else
+            = render 'users/form_signin'
   .navbar_padding
 
   %body

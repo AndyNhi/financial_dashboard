@@ -7,6 +7,10 @@ class DashboardController < ApplicationController
     @daily_tweets = StockTwitApi.new.trending_tickers if current_user.present?
   end
 
+  def quick_info
+   @symbol = params[:symbol]
+  end
+
 private
 
   def user_quotes

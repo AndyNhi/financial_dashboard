@@ -43,7 +43,11 @@ body {
   background: rgba(100, 54, 10, 0.5);
 }
 
-.color_redish {
+
+.top_position {
+  position: fixed;
+}
+.stock_performance_color {
   background: rgba(100, 54, 54, 0.5);
 }
 
@@ -55,6 +59,7 @@ background: rgba(100, 90, 15, 0.5);
   background: rgba(30, 30, 15, 0.5);
 }
 
+// ticker_bar
 
 .symbol {
   float: left;
@@ -71,13 +76,13 @@ background: rgba(100, 90, 15, 0.5);
   padding-right: 3px;
 }
 .symbol.up {
-  background: #CCFFCC;
+  color: white;
 }
 .symbol.up .change {
-  color: #003300;
+  color: green;
 }
 .symbol.down {
-  background: #f7cdc2;
+  color: white;
 }
 .symbol.down .change {
   color: red;
