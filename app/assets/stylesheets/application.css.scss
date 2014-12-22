@@ -40,6 +40,19 @@ body {
   padding-bottom: 2%;
 }
 
+.navbar-header {
+  width: 80%;
+}
+
+.navbar-right {
+  padding-top: 5px;
+  width: 12%;
+}
+
+.glyphicon {
+  padding-right: 30px;
+}
+
 .color_mellow {
   background: rgba(100, 54, 10, 0.5);
 }
@@ -72,11 +85,12 @@ background: rgba(100, 90, 15, 0.5);
 
 .symbol {
   float: left;
-  margin-bottom: 3px;
-  width: 14.28%;
+  margin-bottom: 8px;
+  width: 8%;
   font-size: 10px;
 }
 .symbol .name {
+  margin-top: 8px;
   display: block;
   padding-left: 3px;
 }

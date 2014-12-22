@@ -3,26 +3,16 @@
     .col-md-3
       %h1 twitter feed
       .jumbotron.trending_tweet_color
-        %table.table
-          - if current_user.present?
-            - @daily_tweets[:messages].each do |msg|
-              %tr
-                %td= image_tag(msg[:user][:avatar_url], class: 'img-rounded')
-                %td
-                  %h6= msg[:user][:name]
-                  %h6= msg[:body]
+        - if logged_in?
+          #general_trending_tweets
+            = render partial: 'stock_twits', locals: {twit: @daily_tweets}
+
     .col-md-3
       %h1 twitter portfolio
       .jumbotron.color_mellow
-        %table.table
-          -if current_user.present?
-            - @portfolio_tweets.each do |tweet|
-              %tr
-                %td= image_tag(tweet.user.profile_image_url, class: 'img-rounded')
-                %td
-                  %h6= tweet.user.screen_name
-                  %h6= auto_link_urls(tweet.text).html_safe
-
+        - if logged_in?
+          #user_trending_tweets
+            = render partial: 'portfolio_tweets', locals: {tweets: @portfolio_tweets}
 
     .col-md-6
       .top_position
@@ -38,7 +28,7 @@
               %th EPS NQ
               %th EPS NY
             %tbody
-              - if current_user.present?
+              - if logged_in?
                 - @portfolio_quotes.each do |t|
                   %tr
                     %td= t.name

@@ -15,7 +15,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-var symbols = ['^GSPC', '^NDX', '^RUT', '^GSPTSE', '^N225', '^FTSE', '^VIX'],
+var symbols = ['^GSPC', '^NDX', '^RUT', '^GSPTSE', '^N225', '^FTSE', '^VIX', 'MU', 'GOOG', 'AAPL'],
     properties = [
       {
         classname: 'name',

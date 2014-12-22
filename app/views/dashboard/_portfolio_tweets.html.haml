@@ -1,0 +1,7 @@
+%table.table
+  - tweets.each do |tweet|
+    %tr
+      %td= image_tag(tweet.user.profile_image_url, class: 'img-rounded')
+      %td
+        %h6= tweet.user.screen_name
+        %h6= auto_link_urls(tweet.text).html_safe

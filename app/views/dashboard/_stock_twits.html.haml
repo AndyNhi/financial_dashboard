@@ -1,0 +1,7 @@
+%table.table
+  - twit[:messages].each do |msg|
+    %tr
+      %td= image_tag(msg[:user][:avatar_url], class: 'img-rounded')
+      %td
+        %h6= msg[:user][:name]
+        %h6= msg[:body]

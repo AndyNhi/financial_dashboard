@@ -7,6 +7,16 @@ class DashboardController < ApplicationController
     @daily_tweets = StockTwitApi.new.trending_tickers if current_user.present?
   end
 
+  def update_tweets
+    @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present?
+    render partial: 'portfolio_tweets', locals: {tweets: @portfolio_tweets}
+  end
+
+  def update_stock_twits
+    @daily_tweets = StockTwitApi.new.trending_tickers
+    render partial: 'stock_twits', locals: {twit: @daily_tweets}
+  end
+
   def quick_info
     @symbol = params[:symbol]
   end
