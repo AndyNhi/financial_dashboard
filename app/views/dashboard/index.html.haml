@@ -41,8 +41,9 @@
 
         %h1 quick info
         .jumbotron.quick_info_color
+          = "Current symbol: #{@symbol}"
           = render 'quick_info'
           %p
           %p
-            = image_tag('sa_icon.png', size: '30')
-            = image_tag('yahoo_icon.png', size: '30')
+            = link_to(image_tag('sa_icon.png', size: '30'), "http://seekingalpha.com/symbol/#{@symbol}", target: :blank )
+            = link_to(image_tag('yahoo_icon.png', size: '30'), "https://finance.yahoo.com/q/pr?s=#{@symbol}+Profile", target: :blank)

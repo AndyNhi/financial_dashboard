@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
     @portfolio_quotes = YahooApi.new.portfolio(user_quotes) if current_user.present?
     @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present?
     @daily_tweets = StockTwitApi.new.trending_tickers if current_user.present?
+    @symbol = params[:symbol]
   end
 
   def update_tweets
@@ -15,10 +16,6 @@ class DashboardController < ApplicationController
   def update_stock_twits
     @daily_tweets = StockTwitApi.new.trending_tickers
     render partial: 'stock_twits', locals: {twit: @daily_tweets}
-  end
-
-  def quick_info
-    @symbol = params[:symbol]
   end
 
 private
