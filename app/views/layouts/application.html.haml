@@ -11,12 +11,13 @@
         #indices
       .navbar-right
         .navbar-form
-          - if current_user
+          - if logged_in?
             = link_to('', root_path, class: 'glyphicon glyphicon-th')
             = link_to('', user_path(current_user), class: 'glyphicon glyphicon-user')
             = link_to('', signout_path, class: 'glyphicon glyphicon-remove-circle')
           - else
-            = render 'users/form_signin'
+            = link_to('', signin_path, class: 'glyphicon glyphicon-user')
+            = link_to('', new_user_path, class: 'glyphicon glyphicon-pencil')
   .navbar_padding
 
   %body
