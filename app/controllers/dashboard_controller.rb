@@ -8,6 +8,13 @@ class DashboardController < ApplicationController
     @symbol = params[:symbol]
   end
 
+  def update_yahoo_quotes
+    @portfolio_quotes = YahooApi.new.portfolio(user_quotes) if current_user.present?
+    render partial: 'yahoo_quotes', locals: {quote: @portfolio_quotes}
+  end
+
+
+
   def update_tweets
     @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present?
     render partial: 'portfolio_tweets', locals: {tweets: @portfolio_tweets}

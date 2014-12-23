@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+
+  setInterval(function() {
+    console.log("ticker bar");
+    refresh_bar();},
+    6000);
+
   var symbols = ['^GSPC', '^NDX', '^RUT', '^GSPTSE', '^N225', '^FTSE', '^VIX', 'MU', 'GOOG', 'AAPL'],
 
   properties = [
@@ -34,15 +40,19 @@ function buildElement(quote) {
     return container;
   }
 
-$.getJSON("http://query.yahooapis.com/v1/public/yql", {
+
+function refresh_bar () {
+  $.getJSON("http://query.yahooapis.com/v1/public/yql", {
   format: "json",
   diagnostics: "true",
   env: "http://datatables.org/alltables.env",
   q: "select * from yahoo.finance.quotes where symbol in ('" + symbols.join("','") + "')"
   }, function (data, xhr, status) {
     var elements = data.query.results.quote.map(buildElement);
-  $("#indices").append(elements);
+  $("#indices").html(elements);
   });
+
+};
 
 function shrinker() {
   $('#indices').width($('#indices').parent().width());

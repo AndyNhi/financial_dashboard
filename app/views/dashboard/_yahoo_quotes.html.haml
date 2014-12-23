@@ -1,0 +1,22 @@
+%table.table
+  %thead
+    %th Company
+    %th Symbol
+    %th Last Trade
+    %th Change $ | %
+    %th EPS CY
+    %th EPS NQ
+    %th EPS NY
+  %tbody
+    - quote.each do |t|
+      %tr
+        %td= t.name
+        %td= t.symbol
+        %td= t.last_trade_price
+        - if t.change_and_percent_change.to_f < 0
+          %td.negative= t.change_and_percent_change
+        - else
+          %td.positive= t.change_and_percent_change
+        %td= t.eps_estimate_current_year
+        %td= t.eps_estimate_next_quarter
+        %td= t.eps_estimate_next_year

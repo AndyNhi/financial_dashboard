@@ -99,11 +99,22 @@ background: rgba(100, 90, 15, 0.5);
   color: white;
 }
 .symbol.up .change {
-  color: green;
+  color: red;
 }
 .symbol.down {
   color: white;
 }
 .symbol.down .change {
+  color: red;
+}
+
+
+// performance block
+
+.positive {
+  color: green;
+}
+
+.negative {
   color: red;
 }

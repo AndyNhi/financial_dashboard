@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get   '/dashboard/update_tweets', to: 'dashboard#update_tweets'
   get   '/dashboard/update_stock_twits', to: 'dashboard#update_stock_twits'
+  get   '/dashboard/update_yahoo_quotes', to: 'dashboard#update_yahoo_quotes'
 end

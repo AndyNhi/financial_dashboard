@@ -4,7 +4,7 @@ class YahooApi
     YahooFinance.quotes([symbols],
       [
         :name,
-        :last_trade_realtime_withtime,
+        :last_trade_price,
         :change_and_percent_change,
         :symbol,
         :average_daily_volume,
