@@ -16,4 +16,18 @@ class YahooApi
   end
 
 
+  def quick_information(symbol)
+    YahooFinance.quotes([symbol],
+    [
+      :name,
+      :symbol,
+      :last_trade_price,
+      :change_and_percent_change,
+      :more_info,
+    ]
+    )
+  end
+
+
+
 end

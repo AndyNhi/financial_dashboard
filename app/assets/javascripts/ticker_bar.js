@@ -6,7 +6,7 @@ $(document).ready(function () {
     refresh_bar();},
     6000);
 
-  var symbols = ['^GSPC', '^NDX', '^RUT', '^GSPTSE', '^N225', '^FTSE', '^VIX', 'MU', 'GOOG', 'AAPL'],
+  var symbols = ['^GSPC', '^NDX', '^RUT', '^GSPTSE', '^N225', '^FTSE', '^VIX', '^HSI'],
 
   properties = [
     {

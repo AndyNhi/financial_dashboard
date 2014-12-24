@@ -34,3 +34,9 @@
             = link_to(image_tag('ms_icon.png', size: '30'), "http://quotes.morningstar.com/stock/mu/s?t=#{@symbol}", target: :blank)
             = link_to(image_tag('ts_icon.png', size: '30'), "http://www.thestreet.com/quote/#{@symbol}.html?omorig=header", target: :blank)
             = link_to(image_tag('gg_icon.png', size: '30'), "https://www.google.com/finance?q=NASDAQ%3A#{@symbol}&ei=sD2aVPH-D8yZqwHGyoGwCw", target: :blank)
+          .well
+            - @fetch_info.each do |s|
+              %h6= "Company Name: #{s.name}"
+              %h6= "Symbol: #{s.symbol}"
+              %h6= "Last Trade Price: #{s.last_trade_price}"
+              %h6= "Change and Percent Change: #{s.change_and_percent_change}"

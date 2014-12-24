@@ -1,7 +1,5 @@
-.row
-  = form_tag root_path, method: :get, html: {class: 'form-inline'} do
-    .col-md-4
-      .input-group
-        .input-group-btn
-          = button_tag "Go", class: 'btn btn-default'
-        = text_field_tag :symbol, nil, class: 'form-control'
+= form_tag root_path, method: :get, html: {class: 'form-inline'} do
+  .input-group
+    .input-group-btn
+      = button_tag "Go", class: 'btn btn-default'
+    = text_field_tag :symbol, nil, class: 'form-control'
