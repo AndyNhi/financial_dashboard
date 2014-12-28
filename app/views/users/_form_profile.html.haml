@@ -6,4 +6,10 @@
     = f.label :name
     = f.text_field :name, class: 'form-control'
   .form-group
+    = f.label "Change Password"
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label "confirm password"
+    = f.password_field :password_confirmation, class: 'form-control'
+  .form-group
     = f.submit class: 'btn btn-default'
