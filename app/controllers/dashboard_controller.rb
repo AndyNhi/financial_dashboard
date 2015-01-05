@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 
   def index
     @portfolio_quotes = YahooApi.new.portfolio(user_quotes) if current_user.present?
-    @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present?
+    @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present? && !current_user.quotes.empty?
     @daily_tweets = StockTwitApi.new.trending_tickers if current_user.present?
     @symbol = params[:symbol]
     @fetch_info = YahooApi.new.quick_information(@symbol)
@@ -31,7 +31,7 @@ private
   end
 
   def user_symbols
-    hash_tickers = ""
+    hash_tickers = "GOOG"
     current_user.quotes.each { |hash| hash_tickers += " OR $#{hash.ticker}" }
     hash_tickers
   end

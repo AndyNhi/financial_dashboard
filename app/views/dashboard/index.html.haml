@@ -10,7 +10,7 @@
     .col-md-3
       %h1 twitter portfolio
       .jumbotron.color_mellow
-        - if logged_in?
+        - if logged_in? && !current_user.quotes.empty?
           #user_trending_tweets
             = render partial: 'portfolio_tweets', locals: {tweets: @portfolio_tweets}
 
