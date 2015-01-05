@@ -7,4 +7,11 @@ class QuotesController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def destroy
+    @quote = current_user.quotes.find(params[:id])
+    @quote.destroy
+    redirect_to user_path(current_user)
+  end
+
+
 end

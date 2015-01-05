@@ -2,14 +2,15 @@
   .col-md-3
     %h1 portfolio quotes
     .jumbotron.color_mellow
-      = render 'quotes/form'
-      %table
+      %table.table
         %thead
-          %th
+          %th Portfolio Tickers
         %tbody
         - @quotes.each do |q|
           %tr
             %td= q.ticker
+            %td= link_to "", user_quote_path(@user, q), method: :delete, class: 'glyphicon glyphicon-remove-circle'
+      = render 'quotes/form'
 
   .col-md-4
     %h1 profile

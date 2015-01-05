@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(params.require(:user).permit( :email, :name, :password, :password_confirmation))
     @user.save
-    redirect_to user_account_path
+    redirect_to user_path(@user)
   end
 
   def show

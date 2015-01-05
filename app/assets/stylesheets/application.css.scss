@@ -16,12 +16,17 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "fonts";
 
 body {
   background-image: image-url('stitch.png');
   background-repeat: repeat;
-
 }
+
+h1 {
+  font-family: Quicksand;
+}
+
 
 .jumbotron {
   border-radius: 5px;
