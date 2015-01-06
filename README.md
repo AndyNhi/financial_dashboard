@@ -1,8 +1,4 @@
-== README
-
-gSchool Project: Financial Dashboard
-
-Summary: I will be creating a financial dashboard for my gSchool project.
+Financial Dashboard
 
 Features:
 
