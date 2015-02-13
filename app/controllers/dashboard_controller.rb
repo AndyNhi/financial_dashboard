@@ -2,6 +2,7 @@
 class DashboardController < ApplicationController
 
   def index
+    session[:user_id] = 1
     @portfolio_quotes = YahooApi.new.portfolio(user_quotes) if current_user.present?
     @portfolio_tweets = TwitterApi.new.tweet(user_symbols) if current_user.present? && !current_user.quotes.empty?
     @daily_tweets = StockTwitApi.new.trending_tickers if current_user.present?
